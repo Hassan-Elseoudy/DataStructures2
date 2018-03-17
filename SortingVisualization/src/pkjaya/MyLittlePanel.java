@@ -15,6 +15,11 @@ public class MyLittlePanel extends JPanel {
 	private String currentOperation = ""; // Current Sort (bubble, heap, ... )
 	private String operationDescription = ""; // cureent Operation (Lg n / n^2 ... )
 	
+	  public MyLittlePanel() {
+		    for (int i = 0; i < bits.length; i++) {
+		      bits[i] = i;
+		    }
+		  }
 	public void resetStatistics() {
 	    currentOperation = "";
 	    operationDescription = "";
