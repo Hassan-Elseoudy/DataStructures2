@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import pkjaya.MyLittlePanel;
 
 public class TestJFrame extends JFrame {
 	
@@ -31,6 +32,7 @@ public class TestJFrame extends JFrame {
 			}
 		});
 	}
+	
 	/**
 	 * Create the frame.
 	 */
@@ -53,6 +55,7 @@ public class TestJFrame extends JFrame {
 				contentaPane.setCurrentOperation("Merge Sort");
 				contentaPane.setOperationDescription("O(n log n)");
 			    MergeSort.mergeSort(contentaPane.bits, 0,contentaPane.bits.length - 1);
+			    contentaPane.repaint();
 			}
 		});
 		contentPane.add(btnNewButton);
@@ -65,6 +68,7 @@ public class TestJFrame extends JFrame {
 				contentaPane.setCurrentOperation("Heap Sort");
 				contentaPane.setOperationDescription("O(n log n)");
 			    HeapSort.sort(contentaPane.bits);
+			    contentaPane.repaint();
 			}
 		});
 		contentPane.add(btnHeap);
@@ -76,7 +80,8 @@ public class TestJFrame extends JFrame {
 				reset(contentaPane);
 				contentaPane.setCurrentOperation("Quick Sort");
 				contentaPane.setOperationDescription("O(n log n)");
-			    MergeSort.mergeSort(contentaPane.bits, 0,contentaPane.bits.length - 1);
+			    QuickSort.sort(contentaPane.bits, 0,contentaPane.bits.length - 1);
+			    contentaPane.repaint();
 			}
 		});
 		contentPane.add(btnQuick);
@@ -89,6 +94,7 @@ public class TestJFrame extends JFrame {
 				contentaPane.setCurrentOperation("Insertion Sort");
 				contentaPane.setOperationDescription("O(n^2)");
 			    SimpleSorts.insertionSort(contentaPane.bits);
+			    contentaPane.repaint();
 			}
 		});
 		contentPane.add(btnInsertion);
@@ -101,6 +107,7 @@ public class TestJFrame extends JFrame {
 				contentaPane.setCurrentOperation("Bubble Sort");
 				contentaPane.setOperationDescription("O(n^2)");
 			    SimpleSorts.bubbleSort(contentaPane.bits);
+			    contentaPane.repaint();
 			}
 		});
 		contentPane.add(btnBubble);
@@ -109,7 +116,8 @@ public class TestJFrame extends JFrame {
 		btnShuffle.setBounds(394, 5, 84, 23);
 		btnShuffle.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				SimpleSorts.shuffle(contentaPane.bits); }
+				SimpleSorts.shuffle(contentaPane.bits);
+				contentaPane.repaint();}
 			});
 		contentPane.add(btnShuffle);
 		
