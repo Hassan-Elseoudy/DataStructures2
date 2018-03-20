@@ -16,10 +16,9 @@ public class MyLittlePanel extends JPanel {
 	private String operationDescription = ""; // cureent Operation (Lg n / n^2 ... )
 	
 	  public MyLittlePanel() {
-		    for (int i = 0; i < bits.length; i++) {
-		      bits[i] = i;
+			for (int i = 0; i < bits.length; i++)
+				bits[i] = bits.length-i; // I wanna take color to each element (Rectangle)
 		    }
-		  }
 	public void resetStatistics() {
 	    currentOperation = "";
 	    operationDescription = "";
@@ -36,8 +35,6 @@ public class MyLittlePanel extends JPanel {
 	  @Override
 	  protected void paintComponent(Graphics g) {
 	    super.paintComponent(g);
-		for (int i = 0; i < bits.length; i++)
-			bits[i] = i; // I wanna take color to each element (Rectangle)
 	 // Draw Rectangles
 	    for (int i = 0; i < UNITS; i++) {	
 	      g.setColor(Color.getHSBColor((bits[i] / (float) UNITS), 1, 1));

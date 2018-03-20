@@ -3,6 +3,8 @@ package pkjaya;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,19 +21,42 @@ public class TestJFrame extends JFrame {
 	 * Launch the application.
 	 */
 	MyLittlePanel contentaPane = new MyLittlePanel();
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TestJFrame frame = new TestJFrame();
-					frame.setLocationRelativeTo(null);										
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					TestJFrame frame = new TestJFrame();
+//					frame.contentaPane.repaint();
+//					frame.setLocationRelativeTo(null);										
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
+//	
+	public static void main(String[] args) throws InterruptedException {
+		TestJFrame frame = new TestJFrame();
+	    frame.setLocationRelativeTo(null);
+	    frame.setVisible(true);
+	    Thread.sleep(3000);
+	    new Thread(new Runnable() {
+	      @Override
+	      public void run() {
+	        // only repaint if bits[] changes
+	        while (true) {
+	        	  frame.contentaPane.repaint();
+	          try {
+	            Thread.sleep(5);
+	          } catch (InterruptedException e) {
+	            System.err.println("Interrupted during redraw!");
+	          }
+	        }
+	      }
+	    }).start();
 	}
+
 	
 	/**
 	 * Create the frame.
@@ -47,9 +72,9 @@ public class TestJFrame extends JFrame {
 		contentPane.setLayout(null);
 		contentaPane.setBounds(10, 39, 468, 382);
 		contentPane.add(contentaPane);		
-		JButton btnNewButton = new JButton("Merge");
-		btnNewButton.setBounds(10, 5, 63, 23);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnMerge = new JButton("Merge");
+		btnMerge.setBounds(10, 5, 63, 23);
+		btnMerge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				reset(contentaPane);
 				contentaPane.setCurrentOperation("Merge Sort");
@@ -58,7 +83,7 @@ public class TestJFrame extends JFrame {
 			    contentaPane.repaint();
 			}
 		});
-		contentPane.add(btnNewButton);
+		contentPane.add(btnMerge);
 		
 		JButton btnHeap = new JButton("Heap");
 		btnHeap.setBounds(72, 5, 63, 23);
