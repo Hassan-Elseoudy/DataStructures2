@@ -1,4 +1,6 @@
-package pkjaya;
+package pkjDS;
+
+import pkjDS.Swap_Delay;
 
 public class MergeSort {
 	// Merges two subarrays of arr[].
@@ -30,7 +32,7 @@ public class MergeSort {
 				j++;
 			}
 			k++;
-			Utils.delay();
+			Swap_Delay.delay();
 		}
 
 		/* Copy remaining elements of L[] if any */
@@ -38,7 +40,7 @@ public class MergeSort {
 			arr[k] = L[i];
 			i++;
 			k++;
-			Utils.delay();
+			Swap_Delay.delay();
 		}
 
 		/* Copy remaining elements of R[] if any */
@@ -46,7 +48,7 @@ public class MergeSort {
 			arr[k] = R[j];
 			j++;
 			k++;
-			Utils.delay();
+			Swap_Delay.delay();
 		}
 	}
 

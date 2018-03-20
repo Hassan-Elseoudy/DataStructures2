@@ -1,6 +1,6 @@
-package pkjaya;
+package pkjDS;
 
-public class Utils {
+public class Swap_Delay {
     public static void delay() {
         delay(5);
     }
@@ -10,7 +10,7 @@ public class Utils {
             Thread.sleep(millis);
 
         } catch (InterruptedException e) {
-            System.err.println("Interrupted during algorithm delay!");
+            System.out.println("Exception");
         }
     }
 
