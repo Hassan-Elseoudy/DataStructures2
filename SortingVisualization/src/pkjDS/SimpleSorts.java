@@ -3,12 +3,40 @@ package pkjDS;
 import static pkjDS.Swap_Delay.swap;
 
 public class SimpleSorts {
+	
 	public static void shuffle(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			int random = i + (int) (Math.random() * (array.length - i));
 			swap(array, i, random);
 		}
 	}
+	
+	public static void reversed(int[] array) {
+		for (int i = 0; i < array.length; i++) {
+			array[i] = array.length-i-1;
+		}
+	}
+	
+	public static void sorted(int [] array) {
+		for (int i = 0; i < array.length; i++) {
+			array[i] = i;
+			}
+	}
+	
+	public static void setChoice(int x, int [] array) {
+		if(x == 1)
+			shuffle(array);
+		else if(x == 2)
+			reversed(array);
+		else if(x == 3)
+			sorted(array);
+	}
+	
+	
+	
+//	public static void nearly
+	
+	
 
 	public static void insertionSort(int[] array) {
 		for (int i = 1; i < array.length; i++) {

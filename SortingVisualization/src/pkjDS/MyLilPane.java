@@ -8,9 +8,6 @@ import javax.swing.JPanel;
 
 public class MyLilPane extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	public static int rectangles = 0;
 	public static int delay = 0;
@@ -21,16 +18,15 @@ public class MyLilPane extends JPanel {
 	public MyLilPane() {
 		setBackground(Color.BLACK);
 		setPreferredSize(new Dimension(512, 512));
-
 		for (int i = 0; i < arr.length; i++) {
-			arr[i] = i;
+		arr[i] = i;
 		}
 	}
 
 	public static void setUnits(int x) {
 		rectangles = x;
 	}
-
+	
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -45,9 +41,9 @@ public class MyLilPane extends JPanel {
 
 		// Text drawing
 		int textHeight = g.getFontMetrics().getHeight();
-		g.setColor(Color.BLUE);
+		g.setColor(Color.WHITE);
 		g.drawString(currentOperation, 0, textHeight);
-		g.setColor(Color.BLACK);
+		g.setColor(Color.WHITE);
 		g.drawString(operationDescription, 0, textHeight * 2);
 	}
 
