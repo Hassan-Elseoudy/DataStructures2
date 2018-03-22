@@ -54,7 +54,8 @@ public class MergeSort {
 
 	// Main function that sorts arr[l..r] using
 	// merge()
-	static void mergeSort(int arr[], int l, int r) {
+	static double mergeSort(int arr[], int l, int r) {
+		long start = System.nanoTime();
 		if (l < r) {
 			// Find the middle point
 			int m = (l + r) / 2;
@@ -64,5 +65,6 @@ public class MergeSort {
 			// Merge the sorted halves
 			merge(arr, l, m, r);
 		}
+		return(((double) (System.nanoTime()-start))/100000000);
 	}
 }

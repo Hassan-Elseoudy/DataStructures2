@@ -29,7 +29,8 @@ public class QuickSort {
 	 * The main function that implements QuickSort() arr[] --> Array to be sorted,
 	 * low --> Starting index, high --> Ending index
 	 */
-	static void sort(int arr[], int low, int high) {
+	static double sort(int arr[], int low, int high) {
+		long start = System.nanoTime();
 		if (low < high) {
 			/*
 			 * pi is partitioning index, arr[pi] is now at right place
@@ -40,5 +41,6 @@ public class QuickSort {
 			sort(arr, low, pi - 1);
 			sort(arr, pi + 1, high);
 		}
+		return(((double) (System.nanoTime()-start))/100000000);
 	}
 }

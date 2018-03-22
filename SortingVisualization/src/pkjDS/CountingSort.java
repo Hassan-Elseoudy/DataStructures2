@@ -3,8 +3,8 @@ package pkjDS;
 import static pkjDS.Swap_Delay.delay;
 
 public class CountingSort {
-	public static void sort(int[] array) {
-
+	public static double sort(int[] array) {
+		long start = System.nanoTime();
 		// array to be sorted in, this array is necessary
 		// when we sort object datatypes, if we don't,
 		// we can sort directly into the input array
@@ -49,5 +49,6 @@ public class CountingSort {
 			array[i] = aux[i];
 			Swap_Delay.delay();
 		}
+		return(((double) (System.nanoTime()-start))/100000000);
 	}
 }

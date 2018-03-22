@@ -32,21 +32,18 @@ public class SimpleSorts {
 			sorted(array);
 	}
 	
-	
-	
-//	public static void nearly
-	
-	
-
-	public static void insertionSort(int[] array) {
+	public static double insertionSort(int[] array) {
+		long start = System.nanoTime();
 		for (int i = 1; i < array.length; i++) {
 			for (int j = i; j > 0 && array[j - 1] > array[j]; j--) {
 				swap(array, j, j - 1);
 			}
 		}
+		return(((double) (System.nanoTime()-start))/100000000);
 	}
 
-	public static void selectionSort(int[] array) {
+	public static double selectionSort(int[] array) {
+		long start = System.nanoTime();
 		for (int i = 0; i < array.length - 1; i++) {
 			int minIndex = i;
 			for (int j = i + 1; j < array.length; j++) {
@@ -59,9 +56,11 @@ public class SimpleSorts {
 				swap(array, minIndex, i);
 			}
 		}
+		return(((double) (System.nanoTime()-start))/100000000);
 	}
 
-	public static void bubbleSort(int[] array) {
+	public static double bubbleSort(int[] array) {
+		long start = System.nanoTime();
 		for (int i = 1; i < array.length; i++) {
 			for (int j = 1; j < array.length; j++) {
 				if (array[j - 1] > array[j]) {
@@ -69,5 +68,6 @@ public class SimpleSorts {
 				}
 			}
 		}
+		return(((double) (System.nanoTime()-start))/100000000);
 	}
 }

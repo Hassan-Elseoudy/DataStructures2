@@ -14,6 +14,8 @@ public class MyLilPane extends JPanel {
 	public int[] arr = new int[rectangles];
 	private String currentOperation = "";
 	private String operationDescription = "";
+	private double operationRunTime=0;
+	
 
 	public MyLilPane() {
 		setBackground(Color.BLACK);
@@ -30,6 +32,7 @@ public class MyLilPane extends JPanel {
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		// Rectangle drawing
 		for (int i = 0; i < rectangles; i++) {
 			g.setColor(Color.getHSBColor((arr[i] / (float) rectangles), 1, 1));
 			int x = (int) Math.floor(i * (getWidth() / (float) rectangles));
@@ -38,25 +41,25 @@ public class MyLilPane extends JPanel {
 			int height = getHeight() - y;
 			g.fillRect(x, y, width, height);
 		}
-
 		// Text drawing
 		int textHeight = g.getFontMetrics().getHeight();
 		g.setColor(Color.WHITE);
 		g.drawString(currentOperation, 0, textHeight);
 		g.setColor(Color.WHITE);
 		g.drawString(operationDescription, 0, textHeight * 2);
+		g.setColor(Color.WHITE);
+		g.drawString(Double.toString(operationRunTime) + " second.",0, textHeight * 3);
 	}
 
-	public void resetStatistics() {
+	void resetStatistics() {
 		currentOperation = "";
 		operationDescription = "";
+		operationRunTime=0;
 	}
 
-	public void setCurrentOperation(String currentOperation) {
+	 void setCurrent(String currentOperation,String OperationDescription,Double operationRunTime) {
 		this.currentOperation = currentOperation;
-	}
-
-	public void setOperationDescription(String OperationDescription) {
 		this.operationDescription = OperationDescription;
+		this.operationRunTime = operationRunTime;
 	}
 }

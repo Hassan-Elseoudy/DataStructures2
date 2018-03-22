@@ -2,7 +2,8 @@ package pkjDS;
 import static pkjDS.Swap_Delay.swap;
 
 public class HeapSort {
-  public static void sort(int arr[])  {
+  public static double sort(int arr[])  {
+	long start = System.nanoTime();
     int n = arr.length;
     for (int i = n / 2 - 1; i >= 0; i--) {
       heapify(arr, n, i);
@@ -13,6 +14,7 @@ public class HeapSort {
       arr[i] = temp;
       heapify(arr, i, 0);
     }
+    return(((double) (System.nanoTime()-start))/100000000);
   }
   private static void heapify(int arr[], int n, int i) {
     int largest = i;

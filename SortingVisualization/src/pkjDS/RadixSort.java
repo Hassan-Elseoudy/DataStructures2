@@ -46,7 +46,8 @@ public class RadixSort {
 
 	// The main function to that sorts arr[] of size n using
 	// Radix Sort
-	static void sort(int arr[]) {
+	static double sort(int arr[]) {
+		long start = System.nanoTime();
 		// Find the maximum number to know number of digits
 		int m = getMax(arr, arr.length);
 
@@ -55,5 +56,6 @@ public class RadixSort {
 		// where i is current digit number
 		for (int exp = 1; m / exp > 0; exp *= 10)
 			countSort(arr, arr.length, exp);
+		return(((double) (System.nanoTime()-start))/100000000);
 	}
 }
