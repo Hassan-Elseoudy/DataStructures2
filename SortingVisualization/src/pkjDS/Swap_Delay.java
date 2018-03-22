@@ -2,12 +2,8 @@ package pkjDS;
 
 public class Swap_Delay {
     public static void delay() {
-        delay(5);
-    }
-
-    public static void delay(long millis) {
         try {
-            Thread.sleep(millis);
+            Thread.sleep(MyLilPane.delay);
 
         } catch (InterruptedException e) {
             System.out.println("Exception");
@@ -18,6 +14,6 @@ public class Swap_Delay {
         int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
-        delay();
+        Swap_Delay.delay();
     }
 }

@@ -1,8 +1,6 @@
 package pkjDS;
 
-import static pkjDS.Swap_Delay.delay;
-
-import java.util.*;;
+import java.util.Arrays;;
 
 public class RadixSort {
 
@@ -42,7 +40,7 @@ public class RadixSort {
 		// contains sorted numbers according to curent digit
 		for (i = 0; i < n; i++) {
 			arr[i] = output[i];
-			delay();
+			Swap_Delay.delay();
 		}
 	}
 

@@ -47,7 +47,7 @@ public class CountingSort {
 		}
 		for (int i = 0; i < array.length; i++) {
 			array[i] = aux[i];
-			delay(5);
+			Swap_Delay.delay();
 		}
 	}
 }
